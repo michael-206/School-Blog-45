@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>Hi, {{ current_user.username }}</h1>
+{% for article in articles|reverse %}
+<a href="/post/{{ article.id }}">
+<h2>{{ article.title }}</h2>
+<p>By: {{ article.author }}</p></a>
+
+<hr>
+{% endfor %}
+{% endblock %}
